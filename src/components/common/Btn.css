@@ -1,0 +1,10 @@
+button{
+    border: 0;
+    background-color: #2A913E;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 2px 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 3px;
+}
