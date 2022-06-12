@@ -1,5 +1,6 @@
 import React, {SyntheticEvent, useContext, useState} from "react";
 import {Btn} from "../common/Btn";
+import {Link} from "react-router-dom";
 import {SearchContext} from "../../contexts/search.context";
 
 import './Header.css';
@@ -16,7 +17,7 @@ export const Header = () => {
     return (
         <header>
             <h1>
-                <strong>Mega </strong> Ogłoszenie
+                <Link to='/' className="link"><strong>Mega </strong> Ogłoszenie</Link>
             </h1>
             <Btn to='/add' text={'Dodaj ogłoszenie'}/>
             <form className="search" onSubmit={setSearchFromLocalState}>

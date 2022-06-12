@@ -19,3 +19,8 @@ header h1{
     width: 13rem;
     margin-right: 5px;
 }
+
+.link{
+    text-decoration: none;
+    color: #fff;
+}

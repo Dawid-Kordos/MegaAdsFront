@@ -1,6 +1,7 @@
 import React, {SyntheticEvent, useState} from "react";
 import {Btn} from "../common/Btn";
 import {geocode} from "../../utils/geocoding";
+import {apiUrl} from "../../config/api";
 
 import './AddForm.css';
 
@@ -28,7 +29,7 @@ export const AddForm = () => {
         try {
             const {lat, lon} = await geocode(form.address);
 
-            const res = await fetch('http://localhost:3001/ad', {
+            const res = await fetch(`${apiUrl}/ad`, {
                 method: 'POST',
                 headers: {
                     'Content-Type':'application/json',
@@ -61,7 +62,7 @@ export const AddForm = () => {
             <h1>Dodawanie ogłoszenia</h1>
             <p>
                 <label>
-                    Nazwa: <br/>
+                    Nazwa:
                     <input
                         type="text"
                         name='name'
@@ -72,7 +73,7 @@ export const AddForm = () => {
                     />
                 </label>
                 <label>
-                    Opis: <br/>
+                    Opis:
                     <textarea
                         name='description'
                         maxLength={999}
@@ -81,7 +82,7 @@ export const AddForm = () => {
                     />
                 </label>
                 <label>
-                    Cena*: <br/>
+                    Cena*:
                     <input
                         type="number"
                         name='price'
@@ -92,7 +93,7 @@ export const AddForm = () => {
                     <small>* Pozostaw pole puste aby nie wyświetlać ceny</small>
                 </label>
                 <label>
-                    Adres URL: <br/>
+                    Adres URL:
                     <input
                         type="url"
                         name='url'
@@ -103,7 +104,7 @@ export const AddForm = () => {
                     />
                 </label>
                 <label>
-                    Adres fizyczny na mapie: <br/>
+                    Adres fizyczny na mapie:
                     <input
                         type="text"
                         name='address'

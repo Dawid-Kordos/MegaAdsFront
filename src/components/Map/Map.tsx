@@ -4,6 +4,7 @@ import '../../utils/fix-map-icon';
 import {SearchContext} from "../../contexts/search.context";
 import {SimpleAdEntity} from 'types';
 import {SingleAd} from './SingleAd';
+import {apiUrl} from "../../config/api";
 
 import 'leaflet/dist/leaflet.css';
 import './Map.css';
@@ -14,7 +15,7 @@ export const Map = () => {
 
    useEffect(() => {
         (async () => {
-            const res = await fetch(`http://localhost:3001/ad/search/${search}`);
+            const res = await fetch(`${apiUrl}/ad/search/${search}`);
             const data = await res.json();
 
             setAds(data);
